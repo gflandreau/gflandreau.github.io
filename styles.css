@@ -1,0 +1,419 @@
+/* ============================================
+   Grace Flandreau — Portfolio Styles
+   Palette: light blues, greens, and purples
+   ============================================ */
+
+:root {
+  --blue-light: #dbeefb;
+  --blue: #a8d4ee;
+  --blue-deep: #5b8cb8;
+  --green-light: #ddf2e4;
+  --green: #b5e0c4;
+  --green-deep: #5f9c77;
+  --purple-light: #e9e2f7;
+  --purple: #cdbcec;
+  --purple-deep: #8a72b8;
+  --ink: #3b3a4a;
+  --ink-soft: #6b6a7d;
+  --paper: #fdfdfe;
+  --card: #ffffff;
+  --radius: 18px;
+  --shadow: 0 6px 24px rgba(110, 120, 160, 0.12);
+  --shadow-hover: 0 10px 32px rgba(110, 120, 160, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--blue-deep);
+}
+
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1.2rem, 5vw, 3.5rem);
+  background: rgba(253, 253, 254, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--purple-light);
+}
+
+.nav-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--blue-light);
+  color: var(--ink);
+}
+
+.nav-links a.active {
+  background: var(--purple-light);
+  color: var(--purple-deep);
+}
+
+/* ---------- Hero (homepage) ---------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  flex-wrap: wrap;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.2rem, 5vw, 3.5rem);
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--purple-light) 100%);
+}
+
+.hero-photo {
+  width: clamp(220px, 28vw, 300px);
+  height: clamp(220px, 28vw, 300px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 7px solid #ffffff;
+  box-shadow: var(--shadow-hover);
+}
+
+.hero-photo-fallback {
+  width: clamp(220px, 28vw, 300px);
+  height: clamp(220px, 28vw, 300px);
+  border-radius: 50%;
+  border: 7px solid #ffffff;
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(140deg, var(--blue) 0%, var(--purple) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 4.5rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.hero-text {
+  max-width: 540px;
+}
+
+.hero-text .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 0.6rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .tagline {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background: var(--purple-deep);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--blue-deep);
+  border: 2px solid var(--blue);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.2rem, 5vw, 2rem);
+}
+
+.section h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  margin-bottom: 0.4rem;
+}
+
+.section .section-sub {
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.accent-bar {
+  width: 64px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 0.8rem 0 1.4rem;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+}
+
+/* ---------- About (homepage) ---------- */
+
+.about p {
+  margin-bottom: 1.1rem;
+  max-width: 760px;
+}
+
+/* ---------- Explore cards (homepage) ---------- */
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.explore-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border-top: 8px solid var(--blue);
+  transition: transform 0.18s, box-shadow 0.2s;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.explore-card.green-top {
+  border-top-color: var(--green);
+}
+
+.explore-card.purple-top {
+  border-top-color: var(--purple);
+}
+
+.explore-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.explore-card p {
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+  margin-bottom: 1rem;
+}
+
+.explore-card .card-link {
+  font-weight: 600;
+  color: var(--purple-deep);
+}
+
+/* ---------- Page headers (subpages) ---------- */
+
+.page-header {
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.2rem, 5vw, 2rem) clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.page-header.blue-green {
+  background: linear-gradient(135deg, var(--blue-light), var(--purple-light));
+}
+
+.page-header.purple-blue {
+  background: linear-gradient(135deg, var(--purple-light), var(--blue-light));
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  margin-bottom: 0.6rem;
+}
+
+.page-header p {
+  color: var(--ink-soft);
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* ---------- Project / clip cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.7rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s, box-shadow 0.2s;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.work-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.tag-blue { background: var(--blue-light); color: var(--blue-deep); }
+.tag-green { background: var(--green-light); color: var(--green-deep); }
+.tag-purple { background: var(--purple-light); color: var(--purple-deep); }
+
+.work-date {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.work-card h3 {
+  font-size: 1.18rem;
+  margin-bottom: 0.6rem;
+}
+
+.work-card h3 a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.work-card h3 a:hover {
+  color: var(--purple-deep);
+}
+
+.work-card p {
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.work-link {
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: var(--blue-deep);
+}
+
+.work-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  margin-top: 2rem;
+  padding: 2.2rem clamp(1.2rem, 5vw, 3.5rem);
+  text-align: center;
+  background: linear-gradient(135deg, var(--purple-light), var(--blue-light));
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.footer a {
+  color: var(--purple-deep);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
