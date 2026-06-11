@@ -20,11 +20,17 @@ No build step — just HTML and CSS. Open `index.html` in a browser to view it l
   in `files/programming-final/` (keep its `_files` assets folder next to the .html).
 - **Colors:** all colors are defined as variables at the top of `styles.css`.
 
-## Publishing for free with GitHub Pages
+## Publishing changes
 
-1. Create a repository on GitHub (e.g. `gflandreau.github.io` for a clean URL).
-2. Push this folder's contents to it.
-3. In the repo: Settings → Pages → set the source to the `main` branch, root folder.
-4. The site goes live at `https://<username>.github.io/` within a couple of minutes.
+The site is live at **https://gflandreau.github.io** (repo: github.com/gflandreau/gflandreau.github.io).
 
-Netlify and Cloudflare Pages also work — drag and drop this folder into their dashboard.
+After editing any file, double-click **publish-changes.bat** in this folder. It commits and
+pushes your changes, and the live site updates within a minute or two.
+
+## Adding a custom domain later
+
+1. Buy a domain (Porkbun, Cloudflare, Namecheap — about $10–15/year).
+2. On GitHub: repo Settings → Pages → Custom domain → enter the domain, then check
+   "Enforce HTTPS" once available.
+3. At the registrar, add the DNS records GitHub lists in its Pages docs (four A records
+   for the apex domain, plus a www CNAME pointing to gflandreau.github.io).
